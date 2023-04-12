@@ -27,7 +27,15 @@ function Movies() {
 
   return (
     <div>
-      <div>
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "flex-end",
+          alignItems: "center",
+          padding: "20px",
+        }}
+      >
         <label for="search">Search With title: </label>
         <input
           type="text"
