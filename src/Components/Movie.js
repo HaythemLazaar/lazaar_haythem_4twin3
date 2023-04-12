@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function Movie(props) {
   return (
@@ -18,7 +19,9 @@ function Movie(props) {
         alt="movie picture"
         style={{ maxWidth: "300px", paddingBottom: "80px" }}
       />
-      <h2>{props.movie.title}</h2>
+      <NavLink to={"/movies/" + [props.movie.id]} style={{ color: "black" }}>
+        <h2>{props.movie.title}</h2>
+      </NavLink>
       <p>Year : {props.movie.year}</p>
       <p>Genre : {props.movie.genre}</p>
       <p>Description : {props.movie.description}</p>
