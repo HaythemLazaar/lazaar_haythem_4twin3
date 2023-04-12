@@ -1,11 +1,30 @@
-import React from 'react'
-import notfound from '../assets/images/notfound.jfif'
-const NotFound = () => {
-  return (
-    <div>
-    <img src={notfound} width="100%"/>
-    </div>
-  )
-}
+import React, { Component } from "react";
 
-export default NotFound
+export default class NotFound extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      show: false,
+    };
+  }
+
+  componentDidMount() {
+    this.setState({
+      show: true,
+    });
+    setTimeout(() => {
+      this.setState({
+        show: false,
+      });
+    }, 3000);
+  }
+
+  render() {
+    return (
+      <div>
+        {console.log(this.state.show)}
+        {this.state.show ? <h1>Redirect to Movies page</h1> : null}
+      </div>
+    );
+  }
+}
